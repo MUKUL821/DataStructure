@@ -4,7 +4,7 @@ public class NodeTree{
 
 	public NodeTree right=null;
 	public NodeTree left=null;
-	int data;
+	public int data;
 	
 	public NodeTree(int item){
 		this.data=item;

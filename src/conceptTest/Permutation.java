@@ -9,6 +9,7 @@ import java.util.Map.Entry;
 public class Permutation {
 
 	public static void main(String[] args) {
+		
 		Permutation per = new Permutation();
 		String input = "NA";
 		List<String> res = per.findPermutation(input);

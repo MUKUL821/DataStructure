@@ -15,8 +15,36 @@ public class GroupAnagrams {
 		 for(List<String> s: ls)
 			 System.out.println("--"+s);
 	}
-
 	 public static List<List<String>> groupAnagram(String[] strs) {
+         List<List<String>> result = new ArrayList<List<String>>();
+        if(strs==null)
+            return result;
+        
+       
+        HashMap<String, List<String>> map =  new HashMap<String, List<String>>();
+        List<String> list;
+        String new_key;
+        for(String str : strs){
+            char[] strArray = str.toCharArray() ;
+            Arrays.sort(strArray);
+            new_key = new String(strArray);
+            if(!map.containsKey(new_key))
+                map.put(new_key, new ArrayList<String>());
+            
+            map.get(new_key).add(str);
+            	 
+               
+            }
+       /***
+        *                   
+        for(Map.Entry<String, List<String>> entry : map.entrySet()){
+            result.add(entry.getValue());
+        }
+        * ***/
+        
+        return new ArrayList<List<String>>(map.values());
+    }
+/***	 public static List<List<String>> groupAnagram(String[] strs) {
 	        if (strs == null || strs.length == 0) return new ArrayList<List<String>>();
 	        Map<String, List<String>> map = new HashMap<String, List<String>>();
 	        for (String s : strs) {
@@ -27,6 +55,6 @@ public class GroupAnagrams {
 	            map.get(keyStr).add(s);
 	        }
 	        return new ArrayList<List<String>>(map.values());
-	    }
+	    }***/
 
 }

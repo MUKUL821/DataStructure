@@ -7,8 +7,8 @@ public class MergeSortedList {
 		// TODO Auto-generated method stub
 		Node list1 = new Node(1);
 		list1.next =  new Node(4);
-		list1.next.next =  new Node(5);
-		list1.next.next.next =  new Node(48);
+		/////
+		System.out.println(" "+list1.next);
 		Node list2 = new Node(2);
 		list2.next = new Node(20);
 		list2.next.next = new Node(49);

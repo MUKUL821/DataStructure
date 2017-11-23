@@ -25,12 +25,16 @@ public class PermutationsBacktracking {
 		      list.add(new ArrayList<>(tempList));
 		   } else{
 			   System.out.println("no");
-		      for(int i = 0; i < nums.length; i++){ 
+		      for(int i = 0; i < nums.length; i++){
+		    	
+		    
 		         if(tempList.contains(nums[i])) continue; // element already exists, skip
+		         
 		         tempList.add(nums[i]);
-		         System.out.println("added");
+		         //System.out.println("added");
 		         backtrack(list, tempList, nums);
 		         tempList.remove(tempList.size() - 1);
+		         
 		      }
 		   }
 		} 

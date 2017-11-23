@@ -19,8 +19,6 @@ public class CombinationPhoneNumber {
 	    for(int i =0; i < digits.length(); i++){
 	    	 int x = Character.getNumericValue(digits.charAt(i));
 	    	 while(ans.peek().length()==i){
-	    		 System.out.println(" ans is :"+ans);
-	    		 System.out.println("lenght "+ans.peek().length());
 	    		 String init =  ans.remove();
 	    		 System.out.println(" init is :"+init);
 		    	 for(char s : mapping[x].toCharArray())

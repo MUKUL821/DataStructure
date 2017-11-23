@@ -23,7 +23,6 @@ public class ThreeSum {
          int len = nums.length;
          while(start <= len - 3){
               if(nums[start]==0 && nums[start+2]==0){
-       
              	 result.add(Arrays.asList(nums[start], nums[start+1], nums[start+2]));
              	 start+=2;
              	 continue;
