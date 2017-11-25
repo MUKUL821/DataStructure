@@ -8,6 +8,7 @@ public class ParathesisCombination {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<String> ls = generateParenthesisDFS(4);
+		System.out.println("LIST SIZE "+ls.size());
 		for(String s: ls)
 			System.out.println("ans:  "+s);
 	}
@@ -21,23 +22,24 @@ public class ParathesisCombination {
 	    if(left > right){
 	        return;
 	    }
-	    if(left > 0){
-	        generateOneByOne( sublist + "(" , list, left-1, right);
-	    }
 	    if(right > 0){
 	        generateOneByOne( sublist + ")" , list, left, right-1);
 	    }
+	    if(left > 0){
+	        generateOneByOne( sublist + "(" , list, left-1, right);
+	    }
+
 	    if(left == 0 && right == 0){
 	        list.add(sublist);
 	        return;
 	    }
 	    
 	}	 public static List<String> generateParenthesis(int n) {
-	        List<String> list = new ArrayList<String>();
-	        backtrack(list, "", 0, 0, n);
-	        return list;
+	        List<String> res = new ArrayList<String>();
+	        backtrack(res, "", 0, 0, n);
+	        return res;
 	    }
-	    
+
 	    public static void backtrack(List<String> list, String str, int open, int close, int max){
 	        
 	        if(str.length() == max*2){

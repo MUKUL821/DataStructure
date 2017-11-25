@@ -3,39 +3,48 @@ package target1;
 public class CountSay {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	System.out.println("res "+countAndSay(4));
+		System.out.println("res "+countAndSay(5));
 	}
 	public static String countAndSay(int n) {
-        String res = "1";
-        String str_new = "";
-       if(n < 0)
-           return " ";
+		if(n < 1)
+			return "0";
+	    if (n == 1)      return "1";
+	    if (n == 2)      return "11";
+		
+		StringBuffer sb = new StringBuffer("1");
 
-       for(int start = 1;start<n; start++){
-    	   str_new = "";
-    	   System.out.println(" start "+start+" res"+res);
-           int j = res.length()-1;
-          while(j >=0){
-               int count = 1;
-               char target = res.charAt(j);
-               int t = j-1;
-               System.out.println("t is"+t);
-               while(t>=0 && res.charAt(t) == target){
-                   count++;
-                   t--;
-               }
-               str_new =  String.valueOf(count) + String.valueOf(res.charAt(j)) + str_new;
-               j = t;
-                   
-               
-           }
-           res = str_new;
-          
-       }
-       
-       return res;
+		for(int i = 2; i <= n; i++){
+			StringBuffer res = new StringBuffer("");
+			int start = sb.length()-1;
+			int count = 0;
+			char prev = sb.charAt(start);
+			res.append(prev);
+			
+			while(start>=0){
+				
+				if(sb.charAt(start)==prev){
+					count++;
+				
+				}
+				else
+				{
+					res.append(count);
+					count=1;
+					prev = sb.charAt(start);
+					res.append(prev);
+
+				}
+				start--;
+				
+			}
+		
+			if(count>0)
+				res.append(count);	
+			sb = res.reverse();
+	
+		}
+		
+       return sb.toString();
        
    }
 }
