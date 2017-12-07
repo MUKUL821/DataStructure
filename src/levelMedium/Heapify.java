@@ -4,7 +4,7 @@ package levelMedium;
 public class Heapify {
 	// 16 14 10 8 7 9 3 2 4 1 // 2,4,5,6,8,10,12,16,23
 // 1 2 3 4 5 6
-	    public static int[] nums = {2,2,3,1};
+	    public static int[] nums = {1,5,6,10,2,3,1};
 	    
 	    static int heap;
 	    public static void main(String[] args) {
@@ -37,6 +37,7 @@ public class Heapify {
 		public static void minHeap(int[] nums){
 		    int mid = (heap-1)/2;
 		    for(int i=mid; i >=0; i--){
+		    	System.out.println("   i is------"+ nums[i]);
 		    	heapify(i);
 		    		
 		    }
@@ -47,7 +48,6 @@ public class Heapify {
 		  int k = i;
 		  int size = heap;
 		  int largest = -1 ;
-		  
 		   if(k >=0 && k <= heap){
 			   //System.out.println("heap size"+heap+ "k is"+nums[k]);
 	            int left = 2*k+1;
