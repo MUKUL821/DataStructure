@@ -6,13 +6,17 @@ public class ReverseLinkedList {
 		Node n1 = new Node(new Integer(4));
 		n1.next = new Node(new Integer(5));
 		n1.next.next = new Node(new Integer(4));
-		n1.next.next.next = new Node(new Integer(4));
+		n1.next.next.next = new Node(new Integer(14));
+		reverse(n1);
+		
+		System.out.println(" ----"+n1.data);
+		System.out.println("abcdef".substring(0, 1));
 
 
 
 
 	
-		System.out.println(" "+isPalindrome(n1));
+		//System.out.println(" "+isPalindrome(n1));
 	}
 
 public static boolean isPalindrome(Node head) {
@@ -50,7 +54,7 @@ public static boolean isPalindrome(Node head) {
        return true; 
     }
 	
-	public void reverse(Node head){
+	public static void reverse(Node head){
 		Node node = head;
 		while(node.next!=null){
 			
@@ -61,7 +65,7 @@ public static boolean isPalindrome(Node head) {
 			head=a;
 			
 		}
-	head.traverseLinkedList();
+	//head.traverseLinkedList();
 		
 	}
 }

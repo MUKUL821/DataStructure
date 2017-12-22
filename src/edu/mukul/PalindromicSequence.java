@@ -1,4 +1,4 @@
-package conceptTest;
+package edu.mukul;
 
 public class PalindromicSequence {
 

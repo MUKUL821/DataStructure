@@ -9,6 +9,7 @@ public class TwoSum {
 		// TODO Auto-generated method stub
 		int []nums = {0,4,3,0};
 		int []res = twoSum(nums, 0);
+	
 		System.out.println("res "+res[0]+ " "+res[1]);
 	}
 	

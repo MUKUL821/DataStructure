@@ -27,9 +27,10 @@ public class MaximumSubsequenceSum {
 			sum_so_far +=arr[i];
 			if(sum_so_far > max_global){
 				max_global = sum_so_far;
+				System.out.println("ms: "+max_global);
 				start = s;
 				end = i;
-				System.out.println("changes"+i);
+				
 			}
 			
 			if(sum_so_far <= 0){

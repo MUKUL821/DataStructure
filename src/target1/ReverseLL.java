@@ -26,15 +26,14 @@ public class ReverseLL {
 	       
 	        if(head==null || head.next ==null)
 	        	return head;
-	        // 3-4-13-.  === 2-1-3-4 ; 3-2-1-4 ; 4-3-2-1
 	        Node start = head;
 	        System.out.println("start is "+start.data);
 	        while(start!=null && start.next!=null){
 	        	
-	        Node  mid = start.next;
-	         start.next = mid.next;
-	         mid.next = head;
-	         head = mid;
+	        Node  node = start.next;
+	         start.next = node.next;
+	         node.next = head;
+	         head = node;
 	    
 	    }
 	        

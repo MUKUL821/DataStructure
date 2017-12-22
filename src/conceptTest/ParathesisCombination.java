@@ -9,6 +9,7 @@ public class ParathesisCombination {
 		// TODO Auto-generated method stub
 		List<String> ls = generateParenthesisDFS(4);
 		System.out.println("LIST SIZE "+ls.size());
+		
 		for(String s: ls)
 			System.out.println("ans:  "+s);
 	}
@@ -22,13 +23,13 @@ public class ParathesisCombination {
 	    if(left > right){
 	        return;
 	    }
-	    if(right > 0){
-	        generateOneByOne( sublist + ")" , list, left, right-1);
-	    }
+	
 	    if(left > 0){
 	        generateOneByOne( sublist + "(" , list, left-1, right);
 	    }
-
+	    if(right > 0){
+	        generateOneByOne( sublist + ")" , list, left, right-1);
+	    }
 	    if(left == 0 && right == 0){
 	        list.add(sublist);
 	        return;
