@@ -14,6 +14,8 @@ public class LongestIncreasingSubsequence {
 	                i = -(i + 1);
 	            }
 	            dp[i] = num;
+	            System.out.println("len and i"+len+" "+i);
+	        
 	            if (i == len) {
 	                len++;
 	            }
@@ -74,11 +76,12 @@ public class LongestIncreasingSubsequence {
     public static void main(String args[]){
         LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
         int arr[] = {23,10,22,5,33,8,9,21,50,41,60,80,99, 22,23,24,25,26,27};
+        int arr1[] = {2,3,1,4,2,10};
         int result = lis.longestSubsequenceWithActualSolution(arr);
         int result1 = lis.longestSubsequenceRecursive(arr);
         System.out.println(result);
         System.out.println(result1);
         
-        System.out.println(" d with binary"+ lengthOfLIS(arr));
+        System.out.println(" d with binary"+ lengthOfLIS(arr1));
     }
 }
